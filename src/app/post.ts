@@ -4,11 +4,12 @@ export class Post {
   postId: number; // Static generation +1?
   userId: number; // Provided by user service
   threadId: number; // Provided by thread service
-  timestamp: Date; // Generated at construction
-  content: string; // Provided by text input
+  timestamp: string;//Date; // Generated at construction
+  content: string; //provided by text input
 
   constructor(userId: number, threadId: number, content: string) {
-    this.timestamp = new Date();
+    //this.timestamp = new Date();
+    this.timestamp = 'DateTimeStub: ' + userId + ' ' + threadId + ' ' + 'am/pm';
     this.postId = Post.postIdSeed;
     Post.postIdSeed++;
     this.userId = userId;

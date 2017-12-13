@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable()
 export class PostService {
 
-  private postsUrl = './';
+  private postsUrl = './../../mock-dbs/mock-posts.json';
 
   constructor(private http: HttpClient) { }
 

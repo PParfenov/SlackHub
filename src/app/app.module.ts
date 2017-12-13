@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ThreadService } from './services/thread.service';
@@ -9,9 +10,6 @@ import { UserService } from './services/user.service';
 import { NewPostComponentComponent } from './new-post-component/new-post-component.component';
 import { DisplayThreadPostsComponent } from './display-thread-posts/display-thread-posts.component';
 import { DisplayPostComponent } from './display-post/display-post.component';
-
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +20,14 @@ import { InMemoryDataService }  from './in-memory-data.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
+    HttpClientModule,
+    RouterModule.forRoot([
+        { path: 'thread', component: DisplayThreadPostsComponent },
+        { path: '', redirectTo: 'thread', pathMatch: 'full'},
+        { path: '**', redirectTo: 'thread', pathMatch: 'full'}
+    ])
   ],
-  providers: [ThreadService, PostService, UserService, InMemoryDataService],
+  providers: [ThreadService, PostService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
