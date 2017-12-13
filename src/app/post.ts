@@ -5,7 +5,7 @@ export class Post {
   userId: number; // Provided by user service
   threadId: number; // Provided by thread service
   timestamp: Date; // Generated at construction
-  content: string; //
+  content: string; // Provided by text input
 
   constructor(userId: number, threadId: number, content: string) {
     this.timestamp = new Date();
@@ -15,9 +15,4 @@ export class Post {
     this.threadId = threadId;
     this.content = content;
   }
-
-  logDate(): void {
-    alert((new Date()).toJSON());
-  }
-
 }
