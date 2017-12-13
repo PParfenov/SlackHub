@@ -9,7 +9,7 @@ import {Post} from '../post';
 export class DisplayThreadPostsComponent implements OnInit {
 
   private activeThreadId: number;
-  private postIdsToDisplay: Array<Post>;
+  private postsToDisplay: Array<Post>;
 
   constructor() {
   }
@@ -17,7 +17,8 @@ export class DisplayThreadPostsComponent implements OnInit {
   ngOnInit() {
 
     //Get the activeThreadId from the threadService and assign to this.activeThreadId;
-    //Pass this.activeThreadId to the postService and assign returned Array to
+    //Pass this.activeThreadId to the postService and assign returned Array to this.postsToDisplay
+    //Loop over the elements in the array and call the displayPost component to display each post
 
   }
 
