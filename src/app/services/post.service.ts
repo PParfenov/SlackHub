@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable()
 export class PostService {
 
-  private postsUrl = 'api/posts';
+  private postsUrl = './';
 
   constructor(private http: HttpClient) { }
 
@@ -33,7 +33,7 @@ export class PostService {
       .pipe(
       map(posts => posts[0]), 
       tap(h => {
-        const outcome = h ? `fetched` : `dpostId not find`;
+        const outcome = h ? `fetched` : `postId not find`;
         console.log(`${outcome} Post postId=${postId}`);
       }),
       catchError(this.handleError<Post>(`getPost postId=${postId}`))
