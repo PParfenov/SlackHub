@@ -7,7 +7,8 @@ import { ThreadService } from './services/thread.service';
 import { PostService } from './services/post.service';
 import { UserService } from './services/user.service';
 import { NewPostComponentComponent } from './new-post-component/new-post-component.component';
-import { DisplayPostsComponentComponent } from './display-posts-component/display-posts-component.component';
+import { DisplayThreadPostsComponent } from './display-thread-posts/display-thread-posts.component';
+import { DisplayPostComponent } from './display-post/display-post.component';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -16,7 +17,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
   declarations: [
     AppComponent,
     NewPostComponentComponent,
-    DisplayPostsComponentComponent
+    DisplayThreadPostsComponent,
+    DisplayPostComponent
   ],
   imports: [
     BrowserModule,

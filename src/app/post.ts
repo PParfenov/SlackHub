@@ -1,6 +1,6 @@
 export class Post {
 
-  static postIdSeed = 1;
+  private static postIdSeed = 1;
   postId: number; // Static generation +1?
   userId: number; // Provided by user service
   threadId: number; // Provided by thread service
@@ -14,7 +14,10 @@ export class Post {
     this.userId = userId;
     this.threadId = threadId;
     this.content = content;
+  }
 
+  logDate(): void {
+    alert((new Date()).toJSON());
   }
 
 }
