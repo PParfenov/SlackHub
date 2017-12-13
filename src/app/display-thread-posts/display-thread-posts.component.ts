@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Post} from '../post';
 
 @Component({
-  selector: 'app-display-posts-component',
+  selector: 'app-display-thread-posts-component',
   templateUrl: './display-thread-posts.component.html',
   styleUrls: ['./display-thread-posts.component.css']
 })

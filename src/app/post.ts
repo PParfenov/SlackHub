@@ -14,6 +14,10 @@ export class Post {
     this.userId = userId;
     this.threadId = threadId;
     this.content = content;
-
   }
+
+  logDate(): void {
+    alert((new Date()).toJSON());
+  }
+
 }
