@@ -4,14 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NewPostComponentComponent } from './new-post-component/new-post-component.component';
-import { DisplayPostsComponentComponent } from './display-posts-component/display-posts-component.component';
+import { DisplayThreadPostsComponent } from './display-thread-posts/display-thread-posts.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPostComponentComponent,
-    DisplayPostsComponentComponent
+    DisplayThreadPostsComponent
   ],
   imports: [
     BrowserModule
