@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { ThreadService } from './services/thread.service';
+import { PostService } from './services/post.service';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -12,7 +15,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ThreadService, PostService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
