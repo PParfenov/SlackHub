@@ -1,7 +1,7 @@
 export class User {
 
-  static userIdSeed = 1;
-  userId: number; // Static generation +1?
+  private static userIdSeed = 1;
+  userId: number;
   name: string;
   threadIdList: Array<number>;
   postIdList: Array<number>;

@@ -1,6 +1,6 @@
 export class Thread {
 
-  static threadIdSeed = 1;
+  private static threadIdSeed = 1;
   threadId: number; // Static generation +1?
   name: string;
   description: string;
