@@ -9,7 +9,8 @@ import { UserService } from './services/user.service';
 import { NewPostComponentComponent } from './new-post-component/new-post-component.component';
 import { DisplayPostsComponentComponent } from './display-posts-component/display-posts-component.component';
 
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,10 @@ import { DisplayPostsComponentComponent } from './display-posts-component/displa
     DisplayPostsComponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
-  providers: [ThreadService, PostService, UserService],
+  providers: [ThreadService, PostService, UserService, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
