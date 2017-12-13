@@ -1,24 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ThreadService } from './services/thread.service';
 import { PostService } from './services/post.service';
 import { UserService } from './services/user.service';
 import { NewPostComponentComponent } from './new-post-component/new-post-component.component';
-import { DisplayPostsComponentComponent } from './display-posts-component/display-posts-component.component';
-
-
+import { DisplayThreadPostsComponent } from './display-thread-posts/display-thread-posts.component';
+import { DisplayPostComponent } from './display-post/display-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPostComponentComponent,
-    DisplayPostsComponentComponent
+    DisplayThreadPostsComponent,
+    DisplayPostComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+        { path: 'thread', component: DisplayThreadPostsComponent },
+        { path: '', redirectTo: 'thread', pathMatch: 'full'},
+        { path: '**', redirectTo: 'thread', pathMatch: 'full'}
+    ])
   ],
   providers: [ThreadService, PostService, UserService],
   bootstrap: [AppComponent]
