@@ -1,10 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <script type="text/javascript" src="../testbed.js"></script>
-  <h1>
-    Welcome to SlackHub!
-  </h1>
-</div>
-<app-display-thread-posts-component></app-display-thread-posts-component>
-<app-new-post-component></app-new-post-component>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <p>Active thread Name Here</p>
+      <p>Active user Name Here</p>
+      <p>Active User's subscribed threads here</p>
+    </div>
 
+    <div class="col-9">
+        <app-display-thread-posts-component></app-display-thread-posts-component>
+        <app-new-post-component></app-new-post-component>
+    </div>
+
+</div>
