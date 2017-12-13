@@ -19,9 +19,9 @@ describe('PostService', () => {
   it('should return post with ID=8',
   async(inject([PostService], (service: PostService) => {
 
-    let expectedPost: Post = <Post>JSON.parse('{"postId": 9, "userId": 1, "threadId": 1, "timestamp": "", "content": "User1, Thread1, Once you hear it you\'ll never think about Bob the same way again"}');
+    let expectedPost: Post = <Post>JSON.parse('{"postId": 8, "userId": 1, "threadId": 1, "timestamp": "", "content": "User1, Thread1, Once you hear it you\'ll never think about Bob the same way again"}');
     let actualPost: Post;
-    service.getPostNo404(8).subscribe(
+    service.getPost(8).subscribe(
       post => this.actualPost = post,
       error => this.errorMessage = <any>error);
     expect(actualPost).toEqual(expectedPost);

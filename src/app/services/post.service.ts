@@ -48,6 +48,26 @@ export class PostService {
     );
   }
 
+  getPostsByThreadId(threadId: number): Observable<Post[]> {
+    if (!threadId) {
+      return of([]);
+    }
+    return this.http.get<Post[]>(`api/posts/?threadId=${threadId}`).pipe(
+      tap(_ => console.log(`found posts matching "${threadId}"`)),
+      catchError(this.handleError<Post[]>('searchPosts', []))
+    );
+  }
+
+  getPostsByUserId(userId: number): Observable<Post[]> {
+    if (!userId) {
+      return of([]);
+    }
+    return this.http.get<Post[]>(`api/posts/?threadId=${userId}`).pipe(
+      tap(_ => console.log(`found posts matching "${userId}"`)),
+      catchError(this.handleError<Post[]>('searchPosts', []))
+    );
+  }
+
   searchPosts(term: string): Observable<Post[]> {
     if (!term.trim()) {
       return of([]);
