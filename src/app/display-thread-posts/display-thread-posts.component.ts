@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Post} from '../post';
+import {Post} from './../classes/post';
+import {PostService} from './../services/post.service';
 
 @Component({
   selector: 'app-display-thread-posts-component',
@@ -8,10 +9,20 @@ import {Post} from '../post';
 })
 export class DisplayThreadPostsComponent implements OnInit {
 
-  private activeThreadId: number;
-  private postsToDisplay: Array<Post>;
+  activeThreadId: number;
+  postsToDisplay: Array<Post>;
 
-  constructor() {
+  constructor(private postService:PostService) {
+
+    this.postsToDisplay=this.postService.getAllPosts();
+  }
+
+  removePost(post:Post):void{
+    this.postService.deletePostById(post.postId);
+  }
+
+  get PostsToDisplay(){
+    return this.postsToDisplay;
   }
 
   ngOnInit() {
