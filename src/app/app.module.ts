@@ -10,19 +10,21 @@ import { PostService } from './services/post.service';
 import { UserService } from './services/user.service';
 import { NewPostComponentComponent } from './new-post-component/new-post-component.component';
 import { DisplayThreadPostsComponent } from './display-thread-posts/display-thread-posts.component';
-import { DisplayPostComponent } from './display-post/display-post.component';
+// import { DisplayPostComponent } from './display-post/display-post.component';
+// import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewPostComponentComponent,
     DisplayThreadPostsComponent,
-    DisplayPostComponent
+    // DisplayPostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    // MatMenuModule,
     RouterModule.forRoot([
         { path: 'thread', component: DisplayThreadPostsComponent },
         { path: '', redirectTo: 'thread', pathMatch: 'full'},

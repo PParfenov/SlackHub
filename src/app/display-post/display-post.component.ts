@@ -1,5 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Post} from './../classes/post';
+
+import {MatMenuModule} from '@angular/material/menu';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-display-post',
@@ -8,10 +11,13 @@ import {Post} from './../classes/post';
 })
 export class DisplayPostComponent implements OnInit {
 
-  private postToDisplay: Post;
+  @Input('postId')
+  postId: number;
 
-  constructor(postToDisplay:Post) {
-    this.postToDisplay=postToDisplay;
+  postToDisplay: Post;
+
+  constructor(private postService: PostService, postId) {
+    this.postToDisplay=this.postService.getPostById(postId);
   }
 
 

@@ -2,11 +2,16 @@ import {TestBed, async, inject} from '@angular/core/testing';
 import {Post} from './../classes/post';
 import {PostService} from './../services/post.service';
 
+let post1: Post;
+let post2: Post;
+
 describe('PostService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [PostService]
     });
+    post1 = new Post({"userId": 1, "threadId": 2, "timestamp": "", "content": "User1, Thread2, Who\"s saying these things?"});
+    post2 = new Post({"userId": 4, "threadId": 2, "timestamp": "", "content": "User4, Thread2, You don\"t know already?"});
   });
 
   it('should...', inject([PostService], (service: PostService) => {
@@ -20,8 +25,6 @@ describe('PostService', () => {
     }));
 
     it('should return all posts', inject([PostService], (service: PostService) => {
-      let post1 = new Post({"postId": 5, "userId": 1, "threadId": 2, "timestamp": "", "content": "User1, Thread2, Who\"s saying these things?"});
-      let post2 = new Post({"postId": 6, "userId": 4, "threadId": 2, "timestamp": "", "content": "User4, Thread2, You don\"t know already?"});
       service.addPost(post1);
       service.addPost(post2);
       expect(service.getAllPosts()).toEqual([post1, post2]);
@@ -32,8 +35,6 @@ describe('PostService', () => {
   describe('#save(post)', () => {
 
     it('should automatically assign an incrementing id', inject([PostService], (service: PostService) => {
-      let post1 = new Post({"userId": 1, "threadId": 2, "timestamp": "", "content": "User1, Thread2, Who\"s saying these things?"});
-      let post2 = new Post({"userId": 4, "threadId": 2, "timestamp": "", "content": "User4, Thread2, You don\"t know already?"});
       service.addPost(post1);
       service.addPost(post2);
       expect(service.getPostById(1)).toEqual(post1);
@@ -45,8 +46,6 @@ describe('PostService', () => {
   describe('#deletePostById(id)', () => {
 
     it('should remove post with the corresponding id', inject([PostService], (service: PostService) => {
-      let post1 = new Post({"userId": 1, "threadId": 2, "timestamp": "", "content": "User1, Thread2, Who\"s saying these things?"});
-      let post2 = new Post({"userId": 4, "threadId": 2, "timestamp": "", "content": "User4, Thread2, You don\"t know already?"});
       service.addPost(post1);
       service.addPost(post2);
       expect(service.getAllPosts()).toEqual([post1, post2]);
@@ -57,8 +56,6 @@ describe('PostService', () => {
     }));
 
     it('should not remove anything if post with corresponding id is not found', inject([PostService], (service: PostService) => {
-      let post1 = new Post({"userId": 1, "threadId": 2, "timestamp": "", "content": "User1, Thread2, Who\"s saying these things?"});
-      let post2 = new Post({"userId": 4, "threadId": 2, "timestamp": "", "content": "User4, Thread2, You don\"t know already?"});
       service.addPost(post1);
       service.addPost(post2);
       expect(service.getAllPosts()).toEqual([post1, post2]);
@@ -71,8 +68,7 @@ describe('PostService', () => {
   describe('#updatePostById(id, values)', () => {
 
     it('should return post with the corresponding id and updated data', inject([PostService], (service: PostService) => {
-      let post = new Post({"userId": 1, "threadId": 2, "timestamp": "", "content": "User1, Thread2, Who\"s saying these things?"});
-      service.addPost(post);
+      service.addPost(post1);
       let updatedPost = service.updatePostById(1, {
         content: 'new title'
       });
@@ -80,9 +76,8 @@ describe('PostService', () => {
     }));
 
     it('should return null if post is not found', inject([PostService], (service: PostService) => {
-      let post = new Post({"userId": 1, "threadId": 2, "timestamp": "", "content": "User1, Thread2, Who\"s saying these things?"});
-      service.addPost(post);
-      let updatedPost = service.updatePostById(2, {
+      service.addPost(post1);
+      let updatedPost = service.updatePostById(3, {
         title: 'new title'
       });
       expect(updatedPost).toEqual(null);
