@@ -6,6 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Post } from './../classes/post';
+import {environment} from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,7 +15,7 @@ const httpOptions = {
 @Injectable()
 export class PostService {
 
-  private postsUrl = './../../mock-dbs/mock-posts.json';
+  private postsUrl = environment.apiUrl+'/posts';
 
   constructor(private http: HttpClient) { }
 

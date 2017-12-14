@@ -15,11 +15,13 @@ export class NewPostComponentComponent implements OnInit {
 
   addPost():void{
     //TODO, replace the threadId, timestamp, and UserID with dynamic values
+    this.newPost.postId=-1;//Remove this and generate dynamically
     this.newPost.threadId=-1;//ActiveThreadIdPassedFromDisplayWindow?
     this.newPost.userId=-1;//ActiveUserIdPassedFromDisplayWindow?
     this.newPost.timestamp="";//Eventually replace with a new date/time json
-    this.postService.addPost(this.newPost);
+    this.postService.addPost(this.newPost).subscribe();
     this.newPost=new Post;
+
   }
 
   ngOnInit() {
