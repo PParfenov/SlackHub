@@ -5,7 +5,7 @@
     <h1>Posts</h1>
     <!-- <input class="new-post" placeholder="*Crickets chirping*" autofocus="" [(ngModel)]="newPost.content" (keyup.enter)="addPost()"> -->
   </header>
-  <section class="main" *ngIf="postsToDisplay.length > 0">
+  <section class="main" *ngIf="postsToDisplay && postsToDisplay.length > 0">
     <ul class="post-list">
       <li *ngFor="let post of postsToDisplay">
         <div class="view">

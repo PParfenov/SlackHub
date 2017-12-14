@@ -11,7 +11,7 @@ import {Observer} from "rxjs/Observer";
 export class DisplayThreadPostsComponent implements OnInit {
 
   activeThreadId: number;
-  postsToDisplay: Array<Post>;
+  postsToDisplay: Post[];
   // observer:Observer<T>;
 
   constructor(private postService:PostService) {
@@ -28,12 +28,9 @@ export class DisplayThreadPostsComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.postService
       .getPosts()
-      .subscribe(postsToDisplay => {
-        this.postsToDisplay = postsToDisplay;
-    });
+      .subscribe(postsToDisplay => this.postsToDisplay = postsToDisplay);
 
     //Get the activeThreadId from the threadService and assign to this.activeThreadId;
     //Pass this.activeThreadId to the postService and assign returned Array to this.postsToDisplay
