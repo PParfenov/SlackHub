@@ -16,7 +16,7 @@
     animation-play-state: paused; }
   
   .shake-freeze:hover,
-  .shake-trigger:-ms-keyboard-active .shake-freeze, .shake:hover,
+  .shake-trigger:hover .shake-freeze, .shake:hover,
   .shake-trigger:hover .shake, .shake-little:hover,
   .shake-trigger:hover .shake-little, .shake-slow:hover,
   .shake-trigger:hover .shake-slow, .shake-hard:hover,
