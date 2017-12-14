@@ -1,3 +1,19 @@
-<p>
-  Display Thread Posts Here
-</p>
+<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+
+<section class="shake">
+  <header class="header">
+    <h1>Posts</h1>
+    <!-- <input class="new-post" placeholder="*Crickets chirping*" autofocus="" [(ngModel)]="newPost.content" (keyup.enter)="addPost()"> -->
+  </header>
+  <section class="main" *ngIf="postsToDisplay.length > 0">
+    <ul class="post-list">
+      <li *ngFor="let post of postsToDisplay">
+        <div class="view">
+          <label>Username Goes Here:</label> <!-- {userService.getUserById(post.userId).name}} -->
+          <label>{{post.content}}</label>
+          <button class="destroy" (click)="removePost(post)"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>

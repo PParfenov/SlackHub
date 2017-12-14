@@ -1,6 +1,9 @@
-<footer>
+<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+
+<footer class="shake">
   <div>
-    <input type="text"/>
-    <button type="submit">Submit Post</button>
+    <!-- <input type="text"/> -->
+    <input class="shake" placeholder="*Crickets chirping*" autofocus="" [(ngModel)]="newPost.content" (keyup.enter)="addPost()">
+    <button class="shake-crazy" type="submit" (click)="addPost()"> Submoot! </button>
   </div>
 </footer>

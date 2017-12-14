@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Post } from './../classes/post';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-new-post-component',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPostComponentComponent implements OnInit {
 
-  constructor() { }
+  newPost:Post = new Post;
+
+  constructor(private postService:PostService) { }
+
+  addPost():void{
+    //TODO, replace the threadId, timestamp, and UserID with dynamic values
+    this.newPost.threadId=-1;//ActiveThreadIdPassedFromDisplayWindow?
+    this.newPost.userId=-1;//ActiveUserIdPassedFromDisplayWindow?
+    this.newPost.timestamp="";//Eventually replace with a new date/time json
+    this.postService.addPost(this.newPost);
+    this.newPost=new Post;
+  }
 
   ngOnInit() {
   }
