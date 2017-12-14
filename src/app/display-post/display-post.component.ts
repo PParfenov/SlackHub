@@ -10,10 +10,9 @@ export class DisplayPostComponent implements OnInit {
 
   private postToDisplay: Post;
 
-  constructor(postToDisplay:Post) {
-    this.postToDisplay=postToDisplay;
+  constructor(postToDisplay: Post) {
+    this.postToDisplay = postToDisplay;
   }
-
 
 
   ngOnInit() {

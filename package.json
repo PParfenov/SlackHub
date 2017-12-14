@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "json-server": "json-server --watch ./src/mock-dbs/mock-posts.json",
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
