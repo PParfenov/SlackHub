@@ -69,6 +69,86 @@
       "threadId": 2,
       "timestamp": "",
       "content": "User1, Thread2, I just wanted to hear you say it."
+    },
+    {
+      "content": "Hey",
+      "postId": 12,
+      "id": 100,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": ""
+    },
+    {
+      "content": "now",
+      "postId": 12,
+      "id": 101,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": ""
+    },
+    {
+      "content": "Button",
+      "postId": 12,
+      "id": 102,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": ""
+    },
+    {
+      "content": "With enter",
+      "postId": 12,
+      "id": 103,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": ""
+    },
+    {
+      "content": "Listening",
+      "postId": 12,
+      "id": 104,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": ""
+    },
+    {
+      "content": "Accepting new posts to the JSON",
+      "postId": 12,
+      "id": 105,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": ""
+    },
+    {
+      "content": "posting",
+      "postId": 12,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": "",
+      "id": 106
+    },
+    {
+      "content": "Why?",
+      "postId": 12,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": "",
+      "id": 107
+    },
+    {
+      "content": "With click",
+      "postId": 12,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": "",
+      "id": 108
+    },
+    {
+      "content": "How about now?",
+      "postId": 12,
+      "threadId": -1,
+      "userId": -1,
+      "timestamp": "",
+      "id": 109
     }
   ]
 }

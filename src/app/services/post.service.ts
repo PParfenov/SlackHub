@@ -80,10 +80,11 @@ export class PostService {
   }
 
   addPost(post: Post): Observable<Post> {
-    return this.http.post<Post>(this.postsUrl, post, httpOptions).pipe(
-      tap((post: Post) => console.log(`added post w/ postId=${post.postId}`)),
-      catchError(this.handleError<Post>('addPost'))
-    );
+    return this.http.post<Post>(this.postsUrl, post, httpOptions);
+    // return this.http.post<Post>(this.postsUrl, post, httpOptions).pipe(
+    //   tap((post: Post) => console.log(`added post w/ postId=${post.postId}`)),
+    //   catchError(this.handleError<Post>('addPost'))
+    // );
   }
 
   deletePost(post: Post | number): Observable<Post> {

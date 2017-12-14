@@ -12,11 +12,17 @@ export class DisplayThreadPostsComponent implements OnInit {
 
   activeThreadId: number;
   postsToDisplay: Post[];
-  // observer:Observer<T>;
+  observer:Observer<Post[]>;
 
   constructor(private postService:PostService) {
-
-    //this.postsToDisplay=this.postService.getAllPosts();
+    this.observer = {
+      next: (value) => {this.postsToDisplay = value;
+        },
+      error: function (value){},
+      complete: function (){
+        console.log('Done');
+      }
+    }
   }
 
   removePost(post:Post):void{
@@ -30,7 +36,7 @@ export class DisplayThreadPostsComponent implements OnInit {
   ngOnInit() {
     this.postService
       .getPosts()
-      .subscribe(postsToDisplay => this.postsToDisplay = postsToDisplay);
+      .subscribe(this.observer);
 
     //Get the activeThreadId from the threadService and assign to this.activeThreadId;
     //Pass this.activeThreadId to the postService and assign returned Array to this.postsToDisplay
