@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import { Post } from './../classes/post';
 import { PostService } from '../services/post.service';
 import {DisplayThreadPostsComponent} from "../display-thread-posts/display-thread-posts.component";
@@ -16,6 +16,9 @@ export class NewPostComponentComponent implements OnInit {
   constructor(private postService:PostService) { }
 
   addPost():void{
+
+
+    this.postService.postMessage("derp");
     //TODO, replace the threadId, timestamp, and UserID with dynamic values
     this.newPost.postId=12;//Remove this and generate dynamically
     this.newPost.threadId=-1;//ActiveThreadIdPassedFromDisplayWindow?
